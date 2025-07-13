@@ -37,11 +37,13 @@ public class Character : MonoBehaviour
 
         if (playerDistance < talkDistance)
         {
+            /*
             if (Input.GetKeyDown(KeyCode.E) && dialogueIndex < profile.dialogue.Length - 1)
             {
                 Talk();
                 talking = true;
             }
+            */
         }
         if (playerDistance >= talkDistance && talking)
         {
@@ -62,6 +64,6 @@ public class Character : MonoBehaviour
     public void Talk()
     {
         dialogueIndex++;
-        uIManager.DisplayString(profile.dialogue[dialogueIndex], profile.characterName, 0.03f);
+        //uIManager.DisplayString(profile.dialogue[dialogueIndex], profile.characterName, 0.03f);
     }
 }

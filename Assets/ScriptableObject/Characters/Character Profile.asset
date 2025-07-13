@@ -10,24 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd80ce37db64dc342ad0fd302427640d, type: 3}
-  m_Name: Jimmy
+  m_Name: Character Profile
   m_EditorClassIdentifier: 
   characterName: Jimmy
   dialogue:
-    dialogueText: []
+    dialogueText:
+    - Hello, 'name's Jimmy
+    - ...uh
+    - What's your name?
     response:
-    - repsonseText: 
+    - repsonseText: John NewComer
       nextDialogue:
         dialogueText:
-        - 
-        - 
-        - 
-        response:
-        - repsonseText: 
-          nextDialogue:
-            dialogueText: []
-            response: []
-        - repsonseText: 
-          nextDialogue:
-            dialogueText: []
-            response: []
+        - Oh uh, Interesting name
+        - ...
+        - now get out of here
+        response: []
+    - repsonseText: I ain't telling you nothin
+      nextDialogue:
+        dialogueText:
+        - Uh, okay????
+        - Get out?????
+        response: []

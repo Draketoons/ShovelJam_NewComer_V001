@@ -335,6 +335,7 @@ MonoBehaviour:
   profile: {fileID: 11400000, guid: e1443ce5eb4c6d441bcabb47b61057fd, type: 2}
   talkDistance: 2
   drawDebugShapes: 1
+  talking: 0
   dialogueIndex: -1
 --- !u!4 &419505819
 Transform:
@@ -493,6 +494,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -574,6 +576,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3551449681139442bacc644e6356549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDistance: 0
+  distanceLimit: 2
+  smoothingAmmount: 0.8
+  player: {fileID: 0}
 --- !u!1 &596290004
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,6 +1206,10 @@ PrefabInstance:
       propertyPath: profile
       value: 
       objectReference: {fileID: 11400000, guid: 2442f2d0cb9bc484d992de91a42a272f, type: 2}
+    - target: {fileID: 1926301134608259793, guid: 2c98fee65801659459c6a35591bf4e42, type: 3}
+      propertyPath: talkDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5259645825594313459, guid: 2c98fee65801659459c6a35591bf4e42, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.31

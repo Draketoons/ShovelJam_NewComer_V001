@@ -4,5 +4,5 @@ using UnityEngine;
 public class CharacterProfile : ScriptableObject
 {
     public string characterName;
-    public string[] dialogue;
+    public Dialogue dialogue;
 }
