@@ -14,8 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Tod
   dialogue:
-  - Hello there!
-  - My name's Tod
-  - How about you?
-  - ...
-  - Not much of a talker are you?
+    dialogueText:
+    - You know what I HATE.
+    - More than anything!!!
+    - Keylime pie
+    response:
+    - repsonseText: uh, okay?
+      nextDialogue:
+        dialogueText:
+        - yup.
+        response: []
+        loopingDialogue: []
+    loopingDialogue:
+    - Hate that sweet green pie

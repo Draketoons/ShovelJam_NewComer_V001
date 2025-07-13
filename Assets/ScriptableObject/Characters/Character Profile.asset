@@ -24,11 +24,29 @@ MonoBehaviour:
         dialogueText:
         - Oh uh, Interesting name
         - ...
-        - now get out of here
-        response: []
+        - now what's the color of my underware?
+        response:
+        - repsonseText: Red?
+          nextDialogue:
+            dialogueText:
+            - WRONG!!
+            response: []
+            loopingDialogue: []
+        - repsonseText: Purple?
+          nextDialogue:
+            dialogueText:
+            - WR- Oh, that's correct actually...
+            response: []
+            loopingDialogue: []
+        loopingDialogue: []
     - repsonseText: I ain't telling you nothin
       nextDialogue:
         dialogueText:
         - Uh, okay????
         - Get out?????
         response: []
+        loopingDialogue: []
+    loopingDialogue:
+    - uh, hey again
+    - ...
+    - now stop talking to me

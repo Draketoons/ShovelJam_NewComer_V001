@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Character : MonoBehaviour
@@ -6,15 +7,17 @@ public class Character : MonoBehaviour
     [SerializeField] private float talkDistance;
     [SerializeField] private bool drawDebugShapes;
     [SerializeField] private bool talking;
-    [SerializeField] private int dialogueIndex;
     private UIManager uIManager;
+    private DialogueManager dM;
     private PlayerController player;
     private float playerDistance;
+    public bool talkedTo;
 
     private void Awake()
     {
         uIManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<UIManager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        dM = GameObject.FindGameObjectWithTag("DM").GetComponent<DialogueManager>();
 
         if (uIManager)
         {
@@ -24,11 +27,10 @@ public class Character : MonoBehaviour
         {
             Debug.Log($"{profile.characterName}: Player Detected!");
         }
-    }
-
-    private void Start()
-    {
-        dialogueIndex = -1;
+        if (player)
+        {
+            Debug.Log($"{profile.characterName}: Found DialogueManager!");
+        }
     }
 
     private void Update()
@@ -37,18 +39,23 @@ public class Character : MonoBehaviour
 
         if (playerDistance < talkDistance)
         {
-            /*
-            if (Input.GetKeyDown(KeyCode.E) && dialogueIndex < profile.dialogue.Length - 1)
+            dM.currentCharacterObj = this;
+            if (!talking)
+            {
+                dM.currentDialogue = profile.dialogue;
+            }
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 Talk();
                 talking = true;
             }
-            */
         }
         if (playerDistance >= talkDistance && talking)
         {
             uIManager.CloseDialogueBox();
-            dialogueIndex = -1;
+            dM.dialogueIndex = -1;
+            dM.currentDialogue = null;
+            dM.hasTalkedTo = false;
             talking = false;
         }
     }
@@ -63,7 +70,13 @@ public class Character : MonoBehaviour
 
     public void Talk()
     {
-        dialogueIndex++;
-        //uIManager.DisplayString(profile.dialogue[dialogueIndex], profile.characterName, 0.03f);
+        dM.hasTalkedTo = talkedTo;
+        dM.currentCharacter = profile;
+        dM.AdvanceDialogue();
+        if (dM.currentDialogue.response.Count == 0)
+        {
+            talkedTo = true;
+            dM.hasTalkedTo = true;
+        }
     }
 }

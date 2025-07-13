@@ -14,19 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Jimmy
   dialogue:
-    dialogueText: []
+    dialogueText:
+    - ipauenfpiuarb
+    - flwejb
     response:
-    - repsonseText: 
+    - repsonseText: what
       nextDialogue:
         dialogueText:
-        - 
-        - 
-        - 
+        - wfeufh
+        - wfeufh
+        - wfeufh
         response:
-        - repsonseText: 
-          nextDialogue:
-            dialogueText: []
-            response: []
         - repsonseText: 
           nextDialogue:
             dialogueText: []
