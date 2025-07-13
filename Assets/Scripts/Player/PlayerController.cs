@@ -4,7 +4,8 @@ public class PlayerController : MonoBehaviour
 {
     public float walkSpeed;
     public float sprintSpeed;
-    public float currentSpeed;
+    [SerializeField] private float currentSpeed;
+    public bool talking;
 
     private void Start()
     {
@@ -13,7 +14,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Vector2 movementVector = new Vector2(Input.GetAxis("Horizontal"), 0);
-        transform.Translate(movementVector * currentSpeed * Time.deltaTime);
+        if (!talking)
+        {
+            Vector2 movementVector = new Vector2(Input.GetAxis("Horizontal"), 0);
+            transform.Translate(movementVector * currentSpeed * Time.deltaTime);
+        }
     }
 }

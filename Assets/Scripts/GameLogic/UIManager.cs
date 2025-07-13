@@ -9,20 +9,32 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameBox;
     [SerializeField] private string testText;
     [SerializeField] private float TEMPtextSpeed;
+    [SerializeField] private GameObject dialogueBoxUI;
 
-    private void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            DisplayString(testText, TEMPtextSpeed);
-        }
+        CloseDialogueBox();
     }
 
-    public void DisplayString(string textToDisplay, float textSpeed)
+    public void DisplayString(string textToDisplay, string nameText, float textSpeed)
     {
+        OpenDialogueBox();
         dialogueBox.text = "";
+        nameBox.text = nameText;
         StopAllCoroutines();
         StartCoroutine(WriteText(textToDisplay, textSpeed));
+    }
+
+    public void OpenDialogueBox()
+    {
+        dialogueBoxUI.SetActive(true);
+    }
+
+    public void CloseDialogueBox()
+    {
+        dialogueBox.text = "";
+        nameBox.text = "";
+        dialogueBoxUI.SetActive(false);
     }
 
     IEnumerator WriteText(string textToWrite, float writeSpeed)
