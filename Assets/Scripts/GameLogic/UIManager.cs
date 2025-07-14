@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private string testText;
     [SerializeField] private float TEMPtextSpeed;
     [SerializeField] private GameObject dialogueBoxUI;
+    [SerializeField] private Camera currentCamera;
 
     private void Start()
     {
@@ -64,6 +65,17 @@ public class UIManager : MonoBehaviour
     {
         CloseResponses();
         dialogueBoxUI.SetActive(true);
+        if (currentCamera.WorldToViewportPoint(dialogueManager.currentCharacterObj.transform.position).y > 0.5f)
+        {
+            dialogueBoxUI.transform.position = new Vector3(dialogueBox.transform.position.x, -50.0f, dialogueBox.transform.position.z);
+            Debug.Log("Current character is up");
+        }
+        if (currentCamera.WorldToViewportPoint(dialogueManager.currentCharacterObj.transform.position).y < 0.5f)
+        {
+            dialogueBoxUI.transform.position = new Vector3(dialogueBox.transform.position.x, 500.0f, currentCamera.transform.position.z);
+            Debug.Log("Current character is Down");
+        }
+        Debug.Log($"Current character screen y position: {currentCamera.WorldToViewportPoint(dialogueManager.currentCharacterObj.transform.position).y}");
     }
 
     public void SetCurrentDialogue(Dialogue dialogueToSet)
