@@ -9,12 +9,14 @@ public class Door : MonoBehaviour
     [SerializeField] private float triggerDistance;
     [SerializeField] private PlayerController player;
     [SerializeField] private GameManager gM;
+    [SerializeField] private UIManager uIManager;
     [SerializeField] private bool interiorDoor;
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         gM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+        uIManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<UIManager>();
     }
 
     private void Update()
@@ -32,6 +34,10 @@ public class Door : MonoBehaviour
                 WalkThrough();
             }
         }
+        if (uIManager.t >= 2.0f)
+        {
+            SceneManager.LoadScene(sceneToLoad);
+        }
     }
 
     private void OnDrawGizmos()
@@ -41,11 +47,11 @@ public class Door : MonoBehaviour
 
     private void WalkThrough()
     {
+        uIManager.FadeOut();
         if (!interiorDoor)
         {
             gM.GetPlayerPosition();
             gM.FlipFirstLoadBool(false);
         }
-        SceneManager.LoadScene(sceneToLoad);
     }
 }

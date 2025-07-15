@@ -840,6 +840,7 @@ MonoBehaviour:
   triggerDistance: 2
   player: {fileID: 0}
   gM: {fileID: 0}
+  uIManager: {fileID: 0}
   interiorDoor: 0
 --- !u!1 &1660316701
 GameObject:
@@ -946,6 +947,7 @@ MonoBehaviour:
   triggerDistance: 1.93
   player: {fileID: 0}
   gM: {fileID: 0}
+  uIManager: {fileID: 0}
   interiorDoor: 0
 --- !u!1 &1786181778
 GameObject:
@@ -1209,6 +1211,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2930971729902203738, guid: 86d020c16d51da341be1414c649ec280, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3164841139162154805, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -1275,6 +1281,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8354240196434847723, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380110195480354658, guid: 86d020c16d51da341be1414c649ec280, type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8935696279793115017, guid: 86d020c16d51da341be1414c649ec280, type: 3}

@@ -6,19 +6,29 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    [Header("Text")]
     [SerializeField] private TextMeshProUGUI dialogueBox;
     [SerializeField] private TextMeshProUGUI nameBox;
     [SerializeField] private TextMeshProUGUI response1Text, response2Text;
-    [SerializeField] private Button responseButton1, responseButton2;
-    [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private string testText;
     [SerializeField] private float TEMPtextSpeed;
+    [Header("UI")]
+    [SerializeField] private Button responseButton1, responseButton2;
     [SerializeField] private GameObject dialogueBoxUI;
+    [SerializeField] private Image blackScreen;
+    [Header("GameLogic")]
+    [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private Camera currentCamera;
+    [SerializeField] private float fadeSpeed;
+    [SerializeField] private bool fadingOut;
+    [SerializeField] private bool fadingIn;
+    public float t;
 
     private void Start()
     {
         CloseDialogueBox();
+        t = 1.0f;
+        FadeIn();
     }
 
     public void DisplayString(string textToDisplay, string nameText, float textSpeed)
@@ -28,6 +38,28 @@ public class UIManager : MonoBehaviour
         nameBox.text = nameText;
         StopAllCoroutines();
         StartCoroutine(WriteText(textToDisplay, textSpeed));
+    }
+
+    private void Update()
+    {
+        if (fadingOut)
+        {
+            blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, Mathf.Lerp(0.0f, 1.0f, t));
+            t +=  fadeSpeed * Time.deltaTime;
+            if (t >= 2.0f)
+            {
+                fadingOut = false;
+            }
+        }
+        if (fadingIn)
+        {
+            blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, Mathf.Lerp(0.0f, 1.0f, t));
+            t -= fadeSpeed * Time.deltaTime;
+            if (t <= 0.0f)
+            {
+                fadingIn = false;
+            }
+        }
     }
 
     public void DisplayResponses()
@@ -82,6 +114,16 @@ public class UIManager : MonoBehaviour
     {
         dialogueManager.currentDialogue = dialogueToSet;
         dialogueManager.AdvanceDialogue();
+    }
+
+    public void FadeOut()
+    {
+        fadingOut = true;
+    }
+
+    public void FadeIn()
+    {
+        fadingIn = true;
     }
 
     public void CloseDialogueBox()
