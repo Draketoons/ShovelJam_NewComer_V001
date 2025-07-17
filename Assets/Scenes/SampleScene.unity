@@ -561,11 +561,6 @@ MonoBehaviour:
   distanceLimit: 2
   smoothingAmmount: 0.8
   player: {fileID: 0}
---- !u!1 &556613354 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8673973576623573438, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-  m_PrefabInstance: {fileID: 4772803891597113744}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &688663452
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,6 +658,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1304166413}
   - component: {fileID: 1304166412}
+  - component: {fileID: 1304166414}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GM
@@ -702,6 +698,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1304166414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304166411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba78bf68aeb0bce4b9943d68053c98ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+  percentage: 0
+  endDayLimit: 1
+  timeMultiplier: 1
+  currentDisplayedTime: 0
+  aMPM: 
 --- !u!114 &1432019620 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8106754092547738801, guid: 86d020c16d51da341be1414c649ec280, type: 3}
@@ -1093,54 +1107,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1794609043
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1794609045}
-  - component: {fileID: 1794609044}
-  m_Layer: 0
-  m_Name: DayTimer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1794609044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794609043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba78bf68aeb0bce4b9943d68053c98ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: 0
-  endDayLimit: 60
-  timeMultiplier: 1
-  percentage: 0
---- !u!4 &1794609045
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794609043}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9993315, y: -12.487836, z: -0.6114458}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1902843988 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1549090341000159157, guid: 68e10e076f6c27f41ba14ce173506187, type: 3}
@@ -1325,10 +1291,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2930971729902203738, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3164841139162154805, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -1368,11 +1330,7 @@ PrefabInstance:
     - target: {fileID: 8106754092547738801, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: dayTimer
       value: 
-      objectReference: {fileID: 1794609044}
-    - target: {fileID: 8106754092547738801, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: clockHand
-      value: 
-      objectReference: {fileID: 556613354}
+      objectReference: {fileID: 0}
     - target: {fileID: 8106754092547738801, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: currentCamera
       value: 
@@ -1404,14 +1362,6 @@ PrefabInstance:
     - target: {fileID: 8354240196434847723, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8380110195480354658, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8673973576623573438, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: m_Name
-      value: hand
       objectReference: {fileID: 0}
     - target: {fileID: 8935696279793115017, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1580,5 +1530,4 @@ SceneRoots:
   - {fileID: 1557804857}
   - {fileID: 1786181780}
   - {fileID: 1304166413}
-  - {fileID: 1794609045}
   - {fileID: 118896207}

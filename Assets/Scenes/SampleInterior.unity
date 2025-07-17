@@ -1098,6 +1098,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8380110195480354658, guid: 86d020c16d51da341be1414c649ec280, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8935696279793115017, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1248,6 +1252,7 @@ MonoBehaviour:
   triggerDistance: 2.16
   player: {fileID: 0}
   gM: {fileID: 0}
+  uIManager: {fileID: 0}
   interiorDoor: 1
 --- !u!4 &1554478728
 Transform:
@@ -1568,7 +1573,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  playerCam: {fileID: 0}
   previousPlayerPosition: {x: 0, y: 0, z: 0}
+  previousCameraPosition: {x: 0, y: 0, z: 0}
+  firstLoad: 0
 --- !u!4 &1869838340
 Transform:
   m_ObjectHideFlags: 0

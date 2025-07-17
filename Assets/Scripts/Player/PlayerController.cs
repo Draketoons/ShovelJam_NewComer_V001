@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float sprintSpeed;
     [SerializeField] private float currentSpeed;
     [SerializeField] private GameManager gM;
+    [SerializeField] private DayTimer dT;
     public bool talking;
     public bool topDownControls;
 
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     {
         currentSpeed = walkSpeed;
         gM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+        dT = GameObject.FindGameObjectWithTag("GM").GetComponent<DayTimer>();
         gM.FindPlayer();
         if (!topDownControls)
         {

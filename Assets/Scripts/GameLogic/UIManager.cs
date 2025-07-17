@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueBox;
     [SerializeField] private TextMeshProUGUI nameBox;
     [SerializeField] private TextMeshProUGUI response1Text, response2Text;
+    [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private string testText;
     [SerializeField] private float TEMPtextSpeed;
     [Header("UI")]
@@ -28,6 +29,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        dayTimer = GameObject.FindGameObjectWithTag("GM").GetComponent<DayTimer>();
         CloseDialogueBox();
         t = 1.0f;
         FadeIn();
@@ -134,6 +136,11 @@ public class UIManager : MonoBehaviour
         dialogueBox.text = "";
         nameBox.text = "";
         dialogueBoxUI.SetActive(false);
+    }
+
+    public void SetTimeText(int time, string aMPM)
+    {
+        timeText.text = $"{time}:{aMPM}";
     }
 
     IEnumerator WriteText(string textToWrite, float writeSpeed)
