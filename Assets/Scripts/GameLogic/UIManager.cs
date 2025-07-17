@@ -16,8 +16,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button responseButton1, responseButton2;
     [SerializeField] private GameObject dialogueBoxUI;
     [SerializeField] private Image blackScreen;
+    [SerializeField] private GameObject clockHand;
     [Header("GameLogic")]
     [SerializeField] private DialogueManager dialogueManager;
+    [SerializeField] private DayTimer dayTimer;
     [SerializeField] private Camera currentCamera;
     [SerializeField] private float fadeSpeed;
     [SerializeField] private bool fadingOut;
@@ -60,6 +62,7 @@ public class UIManager : MonoBehaviour
                 fadingIn = false;
             }
         }
+        clockHand.transform.rotation = Quaternion.Euler(new Vector3(0, 0, dayTimer.percentage * 360.0f));
     }
 
     public void DisplayResponses()

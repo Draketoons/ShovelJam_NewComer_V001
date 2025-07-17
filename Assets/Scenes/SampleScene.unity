@@ -119,6 +119,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &118896207
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1926301134608259793, guid: 2c98fee65801659459c6a35591bf4e42, type: 3}
+      propertyPath: profile
+      value: 
+      objectReference: {fileID: 11400000, guid: edeff2cf53f75a54baf11b6d6149e645, type: 2}
+    - target: {fileID: 5259645825594313459, guid: 2c98fee65801659459c6a35591bf4e42, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.1904745
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259645825594313459, guid: 2c98fee65801659459c6a35591bf4e42, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.9473968
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259645825594313459, guid: 2c98fee65801659459c6a35591bf4e42, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259645825594313459, guid: 2c98fee65801659459c6a35591bf4e42, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259645825594313459, guid: 2c98fee65801659459c6a35591bf4e42, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259645825594313459, guid: 2c98fee65801659459c6a35591bf4e42, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259645825594313459, guid: 2c98fee65801659459c6a35591bf4e42, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259645825594313459, guid: 2c98fee65801659459c6a35591bf4e42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259645825594313459, guid: 2c98fee65801659459c6a35591bf4e42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259645825594313459, guid: 2c98fee65801659459c6a35591bf4e42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8913435044185516800, guid: 2c98fee65801659459c6a35591bf4e42, type: 3}
+      propertyPath: m_Name
+      value: NPC (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2c98fee65801659459c6a35591bf4e42, type: 3}
 --- !u!1 &253488503
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +561,11 @@ MonoBehaviour:
   distanceLimit: 2
   smoothingAmmount: 0.8
   player: {fileID: 0}
+--- !u!1 &556613354 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8673973576623573438, guid: 86d020c16d51da341be1414c649ec280, type: 3}
+  m_PrefabInstance: {fileID: 4772803891597113744}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &688663452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,6 +1093,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1794609043
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1794609045}
+  - component: {fileID: 1794609044}
+  m_Layer: 0
+  m_Name: DayTimer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1794609044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794609043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba78bf68aeb0bce4b9943d68053c98ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+  endDayLimit: 60
+  timeMultiplier: 1
+  percentage: 0
+--- !u!4 &1794609045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794609043}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.9993315, y: -12.487836, z: -0.6114458}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1902843988 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1549090341000159157, guid: 68e10e076f6c27f41ba14ce173506187, type: 3}
@@ -1252,6 +1366,14 @@ PrefabInstance:
       value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 8106754092547738801, guid: 86d020c16d51da341be1414c649ec280, type: 3}
+      propertyPath: dayTimer
+      value: 
+      objectReference: {fileID: 1794609044}
+    - target: {fileID: 8106754092547738801, guid: 86d020c16d51da341be1414c649ec280, type: 3}
+      propertyPath: clockHand
+      value: 
+      objectReference: {fileID: 556613354}
+    - target: {fileID: 8106754092547738801, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: currentCamera
       value: 
       objectReference: {fileID: 519420031}
@@ -1286,6 +1408,10 @@ PrefabInstance:
     - target: {fileID: 8380110195480354658, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673973576623573438, guid: 86d020c16d51da341be1414c649ec280, type: 3}
+      propertyPath: m_Name
+      value: hand
       objectReference: {fileID: 0}
     - target: {fileID: 8935696279793115017, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1454,3 +1580,5 @@ SceneRoots:
   - {fileID: 1557804857}
   - {fileID: 1786181780}
   - {fileID: 1304166413}
+  - {fileID: 1794609045}
+  - {fileID: 118896207}
