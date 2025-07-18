@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     public Dialogue currentDialogue;
     public Response currentResponse;
     public int dialogueIndex;
+    public float textWrittingSpeed;
     public bool hasTalkedTo;
 
     private void Awake()
@@ -29,24 +30,27 @@ public class DialogueManager : MonoBehaviour
 
     public void AdvanceDialogue()
     {
-        dialogueIndex++;
-        if (currentDialogue.response.Count == 0)
+        if (dialogueIndex <= currentDialogue.dialogueText.Length - 1)
         {
-            currentCharacterObj.talkedTo = true;
-        }
-        if (!hasTalkedTo)
-        {
-            uIManager.DisplayString(currentDialogue.dialogueText[dialogueIndex], currentCharacter.characterName, 0.05f);
-            if (dialogueIndex >= currentDialogue.dialogueText.Length - 1)
+            dialogueIndex++;
+            if (currentDialogue.response.Count == 0)
             {
-                uIManager.DisplayResponses();
+                currentCharacterObj.talkedTo = true;
             }
-        }
-        if (hasTalkedTo)
-        {
-            if (dialogueIndex < currentDialogue.loopingDialogue.Length)
+            if (!hasTalkedTo)
             {
-                uIManager.DisplayString(currentDialogue.loopingDialogue[dialogueIndex], currentCharacter.characterName, 0.05f);
+                uIManager.DisplayString(currentDialogue.dialogueText[dialogueIndex], currentCharacter.characterName, textWrittingSpeed);
+                if (dialogueIndex >= currentDialogue.dialogueText.Length - 1)
+                {
+                    uIManager.DisplayResponses();
+                }
+            }
+            if (hasTalkedTo)
+            {
+                if (dialogueIndex < currentDialogue.loopingDialogue.Length)
+                {
+                    uIManager.DisplayString(currentDialogue.loopingDialogue[dialogueIndex], currentCharacter.characterName, textWrittingSpeed);
+                }
             }
         }
     }

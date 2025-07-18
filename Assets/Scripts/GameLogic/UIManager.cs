@@ -11,8 +11,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameBox;
     [SerializeField] private TextMeshProUGUI response1Text, response2Text;
     [SerializeField] private TextMeshProUGUI timeText;
+    [SerializeField] private TextMeshProUGUI loopCounterText;
     [SerializeField] private string testText;
-    [SerializeField] private float TEMPtextSpeed;
     [Header("UI")]
     [SerializeField] private Button responseButton1, responseButton2;
     [SerializeField] private GameObject dialogueBoxUI;
@@ -22,16 +22,29 @@ public class UIManager : MonoBehaviour
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private DayTimer dayTimer;
     [SerializeField] private Camera currentCamera;
+    [SerializeField] private GameManager gM;
     [SerializeField] private float fadeSpeed;
     [SerializeField] private bool fadingOut;
     [SerializeField] private bool fadingIn;
+    [Header("Animation")]
+    [SerializeField] private Animator UIAnimator;
     public float t;
 
     private void Start()
     {
+        gM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
         dayTimer = GameObject.FindGameObjectWithTag("GM").GetComponent<DayTimer>();
+        UIAnimator = GetComponent<Animator>();
+        dayTimer.FindUIManager();
+        dayTimer.CheckCurrentTime();
         CloseDialogueBox();
         t = 1.0f;
+        if (gM.startingNewDay)
+        {
+            loopCounterText.text = $"Loop: {gM.loopCount}";
+            PlayLoopCountAnim();
+            gM.startingNewDay = false;
+        }
         FadeIn();
     }
 
@@ -96,6 +109,11 @@ public class UIManager : MonoBehaviour
         responseButton1.onClick.RemoveAllListeners();
         responseButton2.gameObject.SetActive(false);
         responseButton2.onClick.RemoveAllListeners();
+    }
+
+    public void PlayLoopCountAnim()
+    {
+        UIAnimator.Play("LoopCounterAnim");
     }
 
     public void OpenDialogueBox()

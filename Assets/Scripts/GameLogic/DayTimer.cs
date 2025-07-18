@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DayTimer : MonoBehaviour
 {
@@ -11,13 +12,16 @@ public class DayTimer : MonoBehaviour
     public int currentDisplayedTime;
     public string aMPM;
     public bool paused;
-    private UIManager uIManager;
+    [SerializeField] private UIManager uIManager;
+    [SerializeField] private GameManager gM;
+    [SerializeField] private int currentTime;
+    [SerializeField] private int currentHour;
     float interval;
-    int currentHour;
 
     private void Start()
     {
         uIManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<UIManager>();
+        gM = GetComponent<GameManager>();
         endDayLimit *= 60.0f;
         interval = endDayLimit / 24;
         StartCoroutine(CheckTime());
@@ -35,13 +39,33 @@ public class DayTimer : MonoBehaviour
             if (time >= endDayLimit)
             {
                 Debug.Log("End of day");
+                ResetDay();
             }
         }
     }
 
+    public void FindUIManager()
+    {
+        uIManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<UIManager>();
+    }
+
+    public void CheckCurrentTime()
+    {
+        uIManager.SetTimeText(currentTime, aMPM);
+    }
+
+    public void ResetDay()
+    {
+        gM.startingNewDay = true;
+        time = 0.0f;
+        currentHour = 0;
+        gM.loopCount++;
+        SceneManager.LoadScene("SampleScene");
+    }
+
     IEnumerator CheckTime()
     {
-        int currentTime = 0;
+        currentTime = 0;
         Debug.Log($"Time interval: {interval}");
         while (percentage < 1.0f && !paused)
         {

@@ -682,6 +682,8 @@ MonoBehaviour:
   playerCam: {fileID: 0}
   previousPlayerPosition: {x: 0, y: 0, z: 0}
   previousCameraPosition: {x: 0, y: 0, z: 0}
+  loopCount: 0
+  startingNewDay: 0
   firstLoad: 0
 --- !u!4 &1304166413
 Transform:
@@ -712,10 +714,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0
   percentage: 0
-  endDayLimit: 1
+  endDayLimit: 20
   timeMultiplier: 1
   currentDisplayedTime: 0
   aMPM: 
+  paused: 0
+  uIManager: {fileID: 0}
+  gM: {fileID: 0}
+  currentTime: 0
+  currentHour: 0
 --- !u!114 &1432019620 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8106754092547738801, guid: 86d020c16d51da341be1414c649ec280, type: 3}
@@ -1328,10 +1335,6 @@ PrefabInstance:
       value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 8106754092547738801, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: dayTimer
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106754092547738801, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: currentCamera
       value: 
       objectReference: {fileID: 519420031}
@@ -1523,7 +1526,6 @@ SceneRoots:
   - {fileID: 7446079791960356099}
   - {fileID: 688663454}
   - {fileID: 5397998036060401159}
-  - {fileID: 4772803891597113744}
   - {fileID: 253488506}
   - {fileID: 1480391088349402301}
   - {fileID: 430494849}
@@ -1531,3 +1533,4 @@ SceneRoots:
   - {fileID: 1786181780}
   - {fileID: 1304166413}
   - {fileID: 118896207}
+  - {fileID: 4772803891597113744}

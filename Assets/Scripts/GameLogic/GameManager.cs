@@ -7,13 +7,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Camera playerCam;
     public Vector3 previousPlayerPosition;
     public Vector3 previousCameraPosition;
+    public int loopCount;
+    public bool startingNewDay;
     [SerializeField] bool firstLoad;
 
     private void Awake()
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
         else
         {
