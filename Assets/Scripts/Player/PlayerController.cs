@@ -7,15 +7,15 @@ public class PlayerController : MonoBehaviour
     public float sprintSpeed;
     [SerializeField] private float currentSpeed;
     [SerializeField] private GameManager gM;
-    [SerializeField] private DayTimer dT;
     public bool talking;
     public bool topDownControls;
+    Animator animator;
 
     private void Start()
     {
         currentSpeed = walkSpeed;
         gM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
-        dT = GameObject.FindGameObjectWithTag("GM").GetComponent<DayTimer>();
+        animator = GetComponent<Animator>();
         gM.FindPlayer();
         if (!topDownControls)
         {
@@ -27,15 +27,35 @@ public class PlayerController : MonoBehaviour
     {
         if (!talking)
         {
+            Vector2 movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
             if (!topDownControls)
             {
-                Vector2 movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
-                transform.Translate(movementVector * currentSpeed * Time.deltaTime);
+                
+                transform.Translate(new Vector3(movementVector.x, 0.0f, 0.0f) * currentSpeed * Time.deltaTime);
             }
             else
             {
-                Vector2 movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
                 transform.Translate(movementVector * currentSpeed * Time.deltaTime);
+            }
+
+            if (movementVector.x != 0.0f || movementVector.y != 0.0f)
+            {
+                animator.Play("Player_Walk");
+                if (movementVector.x == 1.0f)
+                {
+                    transform.localScale = new Vector3(4.42f, 6.38f, 1);
+                    Debug.Log("Going Right");
+                }
+                if (movementVector.x == -1.0f)
+                {
+                    transform.localScale = new Vector3(-4.42f, 6.38f, 1);
+                    Debug.Log("Going Left");
+                }
+                Debug.Log($"movementVector: {movementVector}");
+            }
+            else
+            {
+                animator.Play("Player_Idle");
             }
 
             if (Input.GetKeyDown(KeyCode.LeftShift))
