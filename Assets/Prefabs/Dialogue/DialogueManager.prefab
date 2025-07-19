@@ -58,5 +58,5 @@ MonoBehaviour:
       response: []
       loopingDialogue: []
   dialogueIndex: 0
-  textWrittingSpeed: 0.01
+  textWrittingSpeed: 0.03
   hasTalkedTo: 0

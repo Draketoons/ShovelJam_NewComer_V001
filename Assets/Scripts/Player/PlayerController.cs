@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float sprintSpeed;
     [SerializeField] private float currentSpeed;
     [SerializeField] private GameManager gM;
+    [SerializeField] private Vector2 movementVector;
     public bool talking;
     public bool topDownControls;
     Animator animator;
@@ -27,33 +28,37 @@ public class PlayerController : MonoBehaviour
     {
         if (!talking)
         {
-            Vector2 movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
             if (!topDownControls)
             {
-                
                 transform.Translate(new Vector3(movementVector.x, 0.0f, 0.0f) * currentSpeed * Time.deltaTime);
             }
             else
             {
                 transform.Translate(movementVector * currentSpeed * Time.deltaTime);
+                if (movementVector.y == 1.0f)
+                {
+                    animator.Play("Player_WalkUp");
+                }
+                if (movementVector.y == -1.0f)
+                {
+                    animator.Play("Player_WalkDown");
+                }
             }
 
-            if (movementVector.x != 0.0f || movementVector.y != 0.0f)
+            if (movementVector.x != 0.0f && movementVector.y == 0.0f)
             {
                 animator.Play("Player_Walk");
                 if (movementVector.x == 1.0f)
                 {
                     transform.localScale = new Vector3(4.42f, 6.38f, 1);
-                    Debug.Log("Going Right");
                 }
                 if (movementVector.x == -1.0f)
                 {
                     transform.localScale = new Vector3(-4.42f, 6.38f, 1);
-                    Debug.Log("Going Left");
                 }
-                Debug.Log($"movementVector: {movementVector}");
             }
-            else
+            else if (movementVector.x == 0.0f && movementVector.y == 0.0f)
             {
                 animator.Play("Player_Idle");
             }

@@ -30,6 +30,7 @@ public class DialogueManager : MonoBehaviour
 
     public void AdvanceDialogue()
     {
+        currentCharacterObj.PlayTalkAnim();
         if (dialogueIndex <= currentDialogue.dialogueText.Length - 1)
         {
             dialogueIndex++;

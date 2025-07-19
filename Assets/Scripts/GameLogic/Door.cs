@@ -33,10 +33,10 @@ public class Door : MonoBehaviour
             {
                 WalkThrough();
             }
-        }
-        if (uIManager.t >= 2.0f)
-        {
-            SceneManager.LoadScene(sceneToLoad);
+            if (uIManager.doneFadingOut)
+            {
+                SceneManager.LoadScene(sceneToLoad);
+            }
         }
     }
 

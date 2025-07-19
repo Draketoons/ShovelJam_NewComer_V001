@@ -11,6 +11,7 @@ public class Character : MonoBehaviour
     private DialogueManager dM;
     private PlayerController player;
     private float playerDistance;
+    private Animator animator;
     public bool talkedTo;
 
     private void Awake()
@@ -18,6 +19,7 @@ public class Character : MonoBehaviour
         uIManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<UIManager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         dM = GameObject.FindGameObjectWithTag("DM").GetComponent<DialogueManager>();
+        animator = GetComponent<Animator>();
 
         if (uIManager)
         {
@@ -27,7 +29,7 @@ public class Character : MonoBehaviour
         {
             Debug.Log($"{profile.characterName}: Player Detected!");
         }
-        if (player)
+        if (dM)
         {
             Debug.Log($"{profile.characterName}: Found DialogueManager!");
         }
@@ -58,6 +60,10 @@ public class Character : MonoBehaviour
             dM.hasTalkedTo = false;
             talking = false;
         }
+        if (uIManager.doneWriting && animator)
+        {
+            animator.Play("NPC_Idle");
+        }
     }
 
     private void OnDrawGizmos()
@@ -65,6 +71,14 @@ public class Character : MonoBehaviour
         if (drawDebugShapes)
         {
             Gizmos.DrawWireSphere(transform.position, talkDistance);
+        }
+    }
+
+    public void PlayTalkAnim()
+    {
+        if (animator)
+        {
+            animator.Play("NPC_Talk", 0);
         }
     }
 

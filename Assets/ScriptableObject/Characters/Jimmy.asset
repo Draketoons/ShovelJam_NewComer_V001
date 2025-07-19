@@ -50,3 +50,6 @@ MonoBehaviour:
     - uh, hey again
     - ...
     - now stop talking to me
+  animList:
+  - {fileID: 7400000, guid: 39c575c2db03c7d49939859d75d0145e, type: 2}
+  - {fileID: 7400000, guid: 3f057915d223d67448fa08fac45bd557, type: 2}

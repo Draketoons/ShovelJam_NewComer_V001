@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private TextMeshProUGUI loopCounterText;
     [SerializeField] private string testText;
+    public bool doneWriting;
     [Header("UI")]
     [SerializeField] private Button responseButton1, responseButton2;
     [SerializeField] private GameObject dialogueBoxUI;
@@ -24,11 +25,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Camera currentCamera;
     [SerializeField] private GameManager gM;
     [SerializeField] private float fadeSpeed;
-    [SerializeField] private bool fadingOut;
-    [SerializeField] private bool fadingIn;
     [Header("Animation")]
     [SerializeField] private Animator UIAnimator;
-    public float t;
+    public bool doneFadingOut;
 
     private void Start()
     {
@@ -38,14 +37,14 @@ public class UIManager : MonoBehaviour
         dayTimer.FindUIManager();
         dayTimer.CheckCurrentTime();
         CloseDialogueBox();
-        t = 1.0f;
+        FadeIn();
+        doneFadingOut = false;
         if (gM.startingNewDay)
         {
             loopCounterText.text = $"Loop: {gM.loopCount}";
             PlayLoopCountAnim();
             gM.startingNewDay = false;
         }
-        FadeIn();
     }
 
     public void DisplayString(string textToDisplay, string nameText, float textSpeed)
@@ -57,26 +56,8 @@ public class UIManager : MonoBehaviour
         StartCoroutine(WriteText(textToDisplay, textSpeed));
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (fadingOut)
-        {
-            blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, Mathf.Lerp(0.0f, 1.0f, t));
-            t +=  fadeSpeed * Time.deltaTime;
-            if (t >= 2.0f)
-            {
-                fadingOut = false;
-            }
-        }
-        if (fadingIn)
-        {
-            blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, Mathf.Lerp(0.0f, 1.0f, t));
-            t -= fadeSpeed * Time.deltaTime;
-            if (t <= 0.0f)
-            {
-                fadingIn = false;
-            }
-        }
         clockHand.transform.rotation = Quaternion.Euler(new Vector3(0, 0, dayTimer.percentage * 360.0f));
     }
 
@@ -116,6 +97,21 @@ public class UIManager : MonoBehaviour
         UIAnimator.Play("LoopCounterAnim");
     }
 
+    public void FadeIn()
+    {
+        UIAnimator.Play("FadeIn");
+    }
+
+    public void FadeOut()
+    {
+        UIAnimator.Play("FadeOut");
+    }
+
+    public void FlipDoneFadingOutBool()
+    {
+        doneFadingOut = true;
+    }
+
     public void OpenDialogueBox()
     {
         CloseResponses();
@@ -139,16 +135,6 @@ public class UIManager : MonoBehaviour
         dialogueManager.AdvanceDialogue();
     }
 
-    public void FadeOut()
-    {
-        fadingOut = true;
-    }
-
-    public void FadeIn()
-    {
-        fadingIn = true;
-    }
-
     public void CloseDialogueBox()
     {
         dialogueBox.text = "";
@@ -163,6 +149,7 @@ public class UIManager : MonoBehaviour
 
     IEnumerator WriteText(string textToWrite, float writeSpeed)
     {
+        doneWriting = false;
         foreach (char c in textToWrite.ToCharArray())
         {
             dialogueBox.text += c;
@@ -172,5 +159,6 @@ public class UIManager : MonoBehaviour
             }
             yield return new WaitForSeconds(writeSpeed);
         }
+        doneWriting = true;
     }
 }

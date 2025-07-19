@@ -60,7 +60,11 @@ public class DayTimer : MonoBehaviour
         time = 0.0f;
         currentHour = 0;
         gM.loopCount++;
-        SceneManager.LoadScene("SampleScene");
+        uIManager.FadeOut();
+        if (uIManager.doneFadingOut)
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
     }
 
     IEnumerator CheckTime()
