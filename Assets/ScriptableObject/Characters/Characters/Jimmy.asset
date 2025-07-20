@@ -32,13 +32,19 @@ MonoBehaviour:
             - WRONG!!
             response: []
             loopingDialogue: []
+            itemToGive: {fileID: 0}
+            desiredItem: {fileID: 0}
         - repsonseText: Purple?
           nextDialogue:
             dialogueText:
             - WR- Oh, that's correct actually...
             response: []
             loopingDialogue: []
+            itemToGive: {fileID: 0}
+            desiredItem: {fileID: 0}
         loopingDialogue: []
+        itemToGive: {fileID: 0}
+        desiredItem: {fileID: 0}
     - repsonseText: I ain't telling you nothin
       nextDialogue:
         dialogueText:
@@ -46,10 +52,39 @@ MonoBehaviour:
         - Get out?????
         response: []
         loopingDialogue: []
+        itemToGive: {fileID: 0}
+        desiredItem: {fileID: 0}
     loopingDialogue:
     - uh, hey again
     - ...
     - now stop talking to me
-  animList:
-  - {fileID: 7400000, guid: 39c575c2db03c7d49939859d75d0145e, type: 2}
-  - {fileID: 7400000, guid: 3f057915d223d67448fa08fac45bd557, type: 2}
+    itemToGive: {fileID: 0}
+    desiredItem: {fileID: 0}
+  itemDialogue:
+    dialogueText:
+    - Hey ag- WAIT!
+    - Is that keylime pie you have??
+    - ...
+    - Can I have it?
+    - Please?
+    response:
+    - repsonseText: Sure
+      nextDialogue:
+        dialogueText:
+        - YESS
+        response: []
+        loopingDialogue: []
+        itemToGive: {fileID: 0}
+        desiredItem: {fileID: 11400000, guid: 581a21cd7a379b346bb3845128500bf2, type: 2}
+    - repsonseText: No, Actually I want it.
+      nextDialogue:
+        dialogueText:
+        - Oh COME ON
+        response: []
+        loopingDialogue: []
+        itemToGive: {fileID: 0}
+        desiredItem: {fileID: 0}
+    loopingDialogue: []
+    itemToGive: {fileID: 0}
+    desiredItem: {fileID: 0}
+  desiredItem: {fileID: 11400000, guid: 581a21cd7a379b346bb3845128500bf2, type: 2}

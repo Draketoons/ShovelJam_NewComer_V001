@@ -697,6 +697,7 @@ GameObject:
   - component: {fileID: 1304166413}
   - component: {fileID: 1304166412}
   - component: {fileID: 1304166414}
+  - component: {fileID: 1304166415}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GM
@@ -761,6 +762,19 @@ MonoBehaviour:
   gM: {fileID: 0}
   currentTime: 0
   currentHour: 0
+--- !u!114 &1304166415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304166411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e347be20c1eb01448330a39bf197f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemList: []
 --- !u!114 &1432019620 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8106754092547738801, guid: 86d020c16d51da341be1414c649ec280, type: 3}
@@ -1405,18 +1419,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3164841139162154805, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3164841139162154805, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4450506620021858917, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 4890820259392192476, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1443,22 +1445,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5998052181384669722, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5998052181384669722, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5998052181384669722, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6662684966476073586, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6662684966476073586, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7433469145411213905, guid: 86d020c16d51da341be1414c649ec280, type: 3}
@@ -1534,10 +1520,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 924474875102126155, guid: a4d3c97f242b7cb40af3368cd61d0cfd, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.42
-      objectReference: {fileID: 0}
     - target: {fileID: 924474875102126155, guid: a4d3c97f242b7cb40af3368cd61d0cfd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.06

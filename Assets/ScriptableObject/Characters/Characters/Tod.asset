@@ -23,7 +23,25 @@ MonoBehaviour:
       nextDialogue:
         dialogueText:
         - yup.
-        response: []
+        - ...
+        - So take mine I don't want it
+        response:
+        - repsonseText: Alright...
+          nextDialogue:
+            dialogueText:
+            - FINALLY I'M FREE
+            response: []
+            loopingDialogue: []
+            itemToGive: {fileID: 11400000, guid: 581a21cd7a379b346bb3845128500bf2, type: 2}
+        - repsonseText: I don't want it...
+          nextDialogue:
+            dialogueText:
+            - Damn it.
+            response: []
+            loopingDialogue: []
+            itemToGive: {fileID: 0}
         loopingDialogue: []
+        itemToGive: {fileID: 0}
     loopingDialogue:
     - Hate that sweet green pie
+    itemToGive: {fileID: 0}

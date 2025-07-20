@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI response1Text, response2Text;
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private TextMeshProUGUI loopCounterText;
+    [SerializeField] private TextMeshProUGUI updateText;
     [SerializeField] private string testText;
     public bool doneWriting;
     [Header("UI")]
@@ -19,6 +20,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject dialogueBoxUI;
     [SerializeField] private Image blackScreen;
     [SerializeField] private GameObject clockHand;
+    [SerializeField] private GameObject updateUI;
     [Header("GameLogic")]
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private DayTimer dayTimer;
@@ -140,6 +142,21 @@ public class UIManager : MonoBehaviour
         dialogueBox.text = "";
         nameBox.text = "";
         dialogueBoxUI.SetActive(false);
+    }
+
+    public void OpenUpdateUI()
+    {
+        updateUI.SetActive(true);
+    }
+
+    public void CloseUpdateUI()
+    {
+        updateUI.SetActive(false);
+    }
+
+    public void DisplayUpdateText(string textToDisplay)
+    {
+        updateText.text = textToDisplay;
     }
 
     public void SetTimeText(int time, string aMPM)

@@ -55,9 +55,11 @@ public class Character : MonoBehaviour
         if (playerDistance >= talkDistance && talking)
         {
             uIManager.CloseDialogueBox();
+            uIManager.CloseUpdateUI();
             dM.dialogueIndex = -1;
             dM.currentDialogue = null;
             dM.hasTalkedTo = false;
+            dM.checkedItem = false;
             talking = false;
         }
         if (uIManager.doneWriting && animator)

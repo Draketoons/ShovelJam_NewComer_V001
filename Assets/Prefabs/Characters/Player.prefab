@@ -107,6 +107,7 @@ MonoBehaviour:
   sprintSpeed: 5
   currentSpeed: 0
   gM: {fileID: 0}
+  movementVector: {x: 0, y: 0}
   talking: 0
   topDownControls: 0
 --- !u!70 &3417306658381515357
