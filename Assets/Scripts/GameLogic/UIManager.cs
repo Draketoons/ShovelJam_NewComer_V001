@@ -43,8 +43,9 @@ public class UIManager : MonoBehaviour
         inventory.FindUIManager();
         dayTimer.FindUIManager();
         dayTimer.FindAudioManager();
-        dayTimer.CheckCurrentTime();
         dayTimer.paused = false;
+        dayTimer.unPaused = false;
+        dayTimer.CheckCurrentTime();
         CloseDialogueBox();
         FadeIn();
         doneFadingOut = false;

@@ -13,6 +13,7 @@ public class DayTimer : MonoBehaviour
     public int currentDisplayedTime;
     public string aMPM;
     public bool paused;
+    public bool unPaused;
     [SerializeField] private UIManager uIManager;
     [SerializeField] private AudioManager aM;
     [SerializeField] private GameManager gM;
@@ -26,14 +27,20 @@ public class DayTimer : MonoBehaviour
         aM = GameObject.FindGameObjectWithTag("AM").GetComponent<AudioManager>();
         gM = GetComponent<GameManager>();
         endDayLimit *= 60.0f;
-        interval = endDayLimit / 24;
-        StartCoroutine(CheckTime());
+        interval = endDayLimit / 17;
+        currentHour = 6;
     }
 
     private void Update()
     {
         if (!paused)
         {
+            if (!unPaused)
+            {
+                Debug.Log("DayTimer: starting coroutine...");
+                StartCoroutine(CheckTime());
+                unPaused = true;
+            }
             if (time < endDayLimit)
             {
                 time += Time.deltaTime * timeMultiplier;
@@ -50,6 +57,10 @@ public class DayTimer : MonoBehaviour
         if (aM.GetAudioSource().clip == aM.loopSound && !aM.GetAudioSource().isPlaying)
         {
             SceneManager.LoadScene(0);
+        }
+        if (paused)
+        {
+            unPaused = false;
         }
     }
 
@@ -73,26 +84,27 @@ public class DayTimer : MonoBehaviour
         aM.PlayLoopSound();
         gM.startingNewDay = true;
         time = 0.0f;
-        currentHour = 0;
+        percentage = 0.0f;
+        currentHour = 6;
         gM.loopCount++;
         uIManager.FadeOut();
     }
 
     IEnumerator CheckTime()
     {
-        currentTime = 0;
+        currentTime = 6;
         Debug.Log($"Time interval: {interval}");
         while (percentage < 1.0f && !paused)
         {
             Debug.Log("Checking time...");
             Debug.Log($"Current Time: {currentTime}");
             currentHour++;
-            if (percentage < 0.5f)
+            if (currentHour <= 12)
             {
                 aMPM = "AM";
                 currentTime = currentHour;
             }
-            if (percentage > 0.5f)
+            if (currentHour > 12)
             {
                 aMPM = "PM";
                 currentTime = currentHour - 12;
