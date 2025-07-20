@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+using System.Collections.Generic;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private TextMeshProUGUI loopCounterText;
     [SerializeField] private TextMeshProUGUI updateText;
+    [SerializeField] private TextMeshProUGUI inventoryText;
     [SerializeField] private string testText;
     public bool doneWriting;
     [Header("UI")]
@@ -21,9 +22,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image blackScreen;
     [SerializeField] private GameObject clockHand;
     [SerializeField] private GameObject updateUI;
+    [SerializeField] private GameObject inventoryUI;
     [Header("GameLogic")]
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private DayTimer dayTimer;
+    [SerializeField] private Inventory inventory;
     [SerializeField] private Camera currentCamera;
     [SerializeField] private GameManager gM;
     [SerializeField] private float fadeSpeed;
@@ -35,7 +38,9 @@ public class UIManager : MonoBehaviour
     {
         gM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
         dayTimer = GameObject.FindGameObjectWithTag("GM").GetComponent<DayTimer>();
+        inventory = GameObject.FindGameObjectWithTag("GM").GetComponent<Inventory>();
         UIAnimator = GetComponent<Animator>();
+        inventory.FindUIManager();
         dayTimer.FindUIManager();
         dayTimer.CheckCurrentTime();
         CloseDialogueBox();
@@ -152,6 +157,34 @@ public class UIManager : MonoBehaviour
     public void CloseUpdateUI()
     {
         updateUI.SetActive(false);
+    }
+
+    public void OpenInventoryUI()
+    {
+        inventoryUI.SetActive(true);
+    }
+
+    public void CloseInventoryUI()
+    {
+        inventoryUI.SetActive(false);
+    }
+
+    public void DisplayInventory(List<ItemProfile> itemList)
+    {
+        OpenInventoryUI();
+        string inventoryString = "";
+        int count = 0;
+        foreach (ItemProfile item in itemList)
+        {
+            count++;
+            inventoryString += $" {item.itemName} ";
+            if (count == 4)
+            {
+                inventoryString += "\n";
+                count = 0;
+            }
+        }
+        inventoryText.text = inventoryString;
     }
 
     public void DisplayUpdateText(string textToDisplay)

@@ -6,8 +6,30 @@ public class Inventory : MonoBehaviour
 {
     public List<ItemProfile> itemList;
     private UIManager uiManager;
+    bool openInventory;
 
     private void Awake()
+    {
+        uiManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<UIManager>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            openInventory = !openInventory;
+        }
+        if (openInventory)
+        {
+            uiManager.DisplayInventory(itemList);
+        }
+        if (!openInventory)
+        {
+            uiManager.CloseInventoryUI();
+        }
+    }
+
+    public void FindUIManager()
     {
         uiManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<UIManager>();
     }
