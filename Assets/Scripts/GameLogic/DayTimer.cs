@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -41,6 +42,11 @@ public class DayTimer : MonoBehaviour
                 Debug.Log("End of day");
                 ResetDay();
             }
+            uIManager.GetBlackScreen().color = new Color(uIManager.GetBlackScreen().color.r, uIManager.GetBlackScreen().color.g, uIManager.GetBlackScreen().color.b, Mathf.Lerp(0.0f, 100.0f, percentage));
+            if (uIManager.doneFadingOut)
+            {
+                SceneManager.LoadScene("SampleScene");
+            }
         }
     }
 
@@ -61,10 +67,6 @@ public class DayTimer : MonoBehaviour
         currentHour = 0;
         gM.loopCount++;
         uIManager.FadeOut();
-        if (uIManager.doneFadingOut)
-        {
-            SceneManager.LoadScene("SampleScene");
-        }
     }
 
     IEnumerator CheckTime()

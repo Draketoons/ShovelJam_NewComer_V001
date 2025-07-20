@@ -119,6 +119,11 @@ public class UIManager : MonoBehaviour
         doneFadingOut = true;
     }
 
+    public Image GetBlackScreen()
+    {
+        return blackScreen;
+    }
+
     public void OpenDialogueBox()
     {
         CloseResponses();
@@ -178,7 +183,7 @@ public class UIManager : MonoBehaviour
         {
             count++;
             inventoryString += $" {item.itemName} ";
-            if (count == 4)
+            if (count == 6)
             {
                 inventoryString += "\n";
                 count = 0;
