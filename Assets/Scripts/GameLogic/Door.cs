@@ -11,6 +11,7 @@ public class Door : MonoBehaviour
     [SerializeField] private GameManager gM;
     [SerializeField] private UIManager uIManager;
     [SerializeField] private bool interiorDoor;
+    [SerializeField] private ItemProfile requiredItem;
 
     private void Awake()
     {

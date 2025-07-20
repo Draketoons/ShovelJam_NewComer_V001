@@ -11,6 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ClockTower.unity
     guid: 0727e8882ef489d41b395f11c195936c
+  - enabled: 1
+    path: Assets/Scenes/Saloon.unity
+    guid: b386e27ac7b34b44088e9818de8d2fc2
+  - enabled: 1
+    path: Assets/Scenes/SherriffOffice.unity
+    guid: 80385a319d400b34f8994488e656ce5f
+  - enabled: 1
+    path: Assets/Scenes/Inn_Lobby.unity
+    guid: f6fd4343901c88b44950aea2ce116d20
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 5c90db4072efec24892c3cbaaa132a36
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0
