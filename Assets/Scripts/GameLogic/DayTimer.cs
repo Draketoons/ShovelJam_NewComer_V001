@@ -14,6 +14,7 @@ public class DayTimer : MonoBehaviour
     public string aMPM;
     public bool paused;
     [SerializeField] private UIManager uIManager;
+    [SerializeField] private AudioManager aM;
     [SerializeField] private GameManager gM;
     [SerializeField] private int currentTime;
     [SerializeField] private int currentHour;
@@ -22,6 +23,7 @@ public class DayTimer : MonoBehaviour
     private void Start()
     {
         uIManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<UIManager>();
+        aM = GameObject.FindGameObjectWithTag("AM").GetComponent<AudioManager>();
         gM = GetComponent<GameManager>();
         endDayLimit *= 60.0f;
         interval = endDayLimit / 24;
@@ -41,18 +43,24 @@ public class DayTimer : MonoBehaviour
             {
                 Debug.Log("End of day");
                 ResetDay();
+                paused = true;
             }
             uIManager.GetBlackScreen().color = new Color(uIManager.GetBlackScreen().color.r, uIManager.GetBlackScreen().color.g, uIManager.GetBlackScreen().color.b, Mathf.Lerp(0.0f, 100.0f, percentage));
-            if (uIManager.doneFadingOut)
-            {
-                SceneManager.LoadScene("SampleScene");
-            }
+        }
+        if (aM.GetAudioSource().clip == aM.loopSound && !aM.GetAudioSource().isPlaying)
+        {
+            SceneManager.LoadScene(0);
         }
     }
 
     public void FindUIManager()
     {
         uIManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<UIManager>();
+    }
+
+    public void FindAudioManager()
+    {
+        aM = GameObject.FindGameObjectWithTag("AM").GetComponent<AudioManager>();
     }
 
     public void CheckCurrentTime()
@@ -62,6 +70,7 @@ public class DayTimer : MonoBehaviour
 
     public void ResetDay()
     {
+        aM.PlayLoopSound();
         gM.startingNewDay = true;
         time = 0.0f;
         currentHour = 0;
