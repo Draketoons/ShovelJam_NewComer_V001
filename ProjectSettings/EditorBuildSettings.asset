@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Town.unity
     guid: 51887d1c447511e4cbd14c460c7403f4
+  - enabled: 1
+    path: Assets/Scenes/ClockTower.unity
+    guid: 0727e8882ef489d41b395f11c195936c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0

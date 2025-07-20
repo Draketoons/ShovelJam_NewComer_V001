@@ -5,12 +5,20 @@ public class AudioManager : MonoBehaviour
     public AudioClip currentMusic;
     public AudioClip loopSound;
     public AudioClip startSound;
+    public bool playStartSound;
     AudioSource source;
 
     private void Start()
     {
         source = GetComponent<AudioSource>();
-        PlayStartSound();
+        if (playStartSound)
+        {
+            PlayStartSound();
+        }
+        else
+        {
+            StartMusic();
+        }
     }
 
     private void Update()

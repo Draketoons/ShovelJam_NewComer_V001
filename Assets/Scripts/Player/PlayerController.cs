@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector2 movementVector;
     public bool talking;
     public bool topDownControls;
+    public bool inside;
+    public bool ladderMode;
     Animator animator;
 
     private void Start()
@@ -18,7 +20,7 @@ public class PlayerController : MonoBehaviour
         gM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
         animator = GetComponent<Animator>();
         gM.FindPlayer();
-        if (!topDownControls)
+        if (!inside)
         {
             gM.SetPlayerPosition();
         }
@@ -29,11 +31,19 @@ public class PlayerController : MonoBehaviour
         if (!talking)
         {
             movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-            if (!topDownControls)
+            if (!topDownControls && !ladderMode)
             {
                 transform.Translate(new Vector3(movementVector.x, 0.0f, 0.0f) * currentSpeed * Time.deltaTime);
             }
-            else
+            if (ladderMode)
+            {
+                transform.Translate(new Vector3(0.0f, movementVector.y, 0.0f) * currentSpeed * Time.deltaTime);
+                if (movementVector.y != 0.0f)
+                {
+                    animator.Play("Player_WalkUp");
+                }
+            }
+            else if (topDownControls && !ladderMode)
             {
                 transform.Translate(movementVector * currentSpeed * Time.deltaTime);
                 if (movementVector.y == 1.0f)
@@ -46,7 +56,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (movementVector.x != 0.0f && movementVector.y == 0.0f)
+            if (movementVector.x != 0.0f && movementVector.y == 0.0f && !ladderMode)
             {
                 animator.Play("Player_Walk");
                 if (movementVector.x == 1.0f)

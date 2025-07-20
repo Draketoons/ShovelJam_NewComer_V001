@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Camera playerCam;
     public Vector3 previousPlayerPosition;
     public Vector3 previousCameraPosition;
+    public Vector3 startingPosition;
     public int loopCount;
     public bool startingNewDay;
     [SerializeField] bool firstLoad;
@@ -27,11 +28,16 @@ public class GameManager : MonoBehaviour
 
     public void SetPlayerPosition()
     {
-        if (!firstLoad)
+        if (!firstLoad && !startingNewDay)
         {
             player.gameObject.transform.position = previousPlayerPosition;
             playerCam.transform.position = previousCameraPosition;
             firstLoad = false;
+        }
+        if (startingNewDay)
+        {
+            player.gameObject.transform.position = startingPosition;
+            playerCam.transform.position = new Vector3(player.gameObject.transform.position.x, player.gameObject.transform.position.y + 5, -10);
         }
     }
 

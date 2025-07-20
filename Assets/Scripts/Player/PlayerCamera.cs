@@ -17,7 +17,7 @@ public class PlayerCamera : MonoBehaviour
         playerDistance = Vector2.Distance(transform.position, player.gameObject.transform.position);
         if (playerDistance >= distanceLimit)
         {
-            if (!player.topDownControls)
+            if (!player.inside)
             {
                 transform.position = Vector3.Lerp(transform.position, new Vector3(player.gameObject.transform.position.x, 0, -10), Time.deltaTime * smoothingAmmount);
             }

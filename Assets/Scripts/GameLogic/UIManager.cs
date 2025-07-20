@@ -33,6 +33,7 @@ public class UIManager : MonoBehaviour
     [Header("Animation")]
     [SerializeField] private Animator UIAnimator;
     public bool doneFadingOut;
+    public bool interior;
 
     private void Start()
     {
@@ -44,7 +45,6 @@ public class UIManager : MonoBehaviour
         dayTimer.FindUIManager();
         dayTimer.FindAudioManager();
         dayTimer.paused = false;
-        dayTimer.unPaused = false;
         dayTimer.CheckCurrentTime();
         CloseDialogueBox();
         FadeIn();
