@@ -16,5 +16,22 @@ MonoBehaviour:
   dialogue:
     dialogueText:
     - Hi- wait, WHO AM I??
+    - uybiuybiuyviytvi
+    response:
+    - repsonseText: hjbouhb
+      nextDialogue:
+        dialogueText: []
+        response: []
+        loopingDialogue: []
+        itemToGive: {fileID: 0}
+        desiredItem: {fileID: 0}
+    loopingDialogue: []
+    itemToGive: {fileID: 0}
+    desiredItem: {fileID: 0}
+  itemDialogue:
+    dialogueText: []
     response: []
     loopingDialogue: []
+    itemToGive: {fileID: 0}
+    desiredItem: {fileID: 0}
+  desiredItem: {fileID: 0}

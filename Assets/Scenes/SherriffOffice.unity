@@ -2519,9 +2519,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2028170769421400608, guid: 204a1d372859fbe47acd67adb87a0283, type: 3}
+      propertyPath: profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 76db31e59f12d9d42af8c6fec2c2c340, type: 2}
     - target: {fileID: 2431766600368456766, guid: 204a1d372859fbe47acd67adb87a0283, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2934926500547265785, guid: 204a1d372859fbe47acd67adb87a0283, type: 3}
       propertyPath: m_Name
@@ -3397,6 +3401,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6118150944029850621, guid: 3af40615006bccb44b50499c654549c0, type: 3}
+      propertyPath: profile
+      value: 
+      objectReference: {fileID: 11400000, guid: cc8ae7bfc5e3fa54192fc03cbbe24c7b, type: 2}
     - target: {fileID: 6670013141114968033, guid: 3af40615006bccb44b50499c654549c0, type: 3}
       propertyPath: m_Name
       value: Sheriff

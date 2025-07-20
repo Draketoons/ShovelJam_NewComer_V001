@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd80ce37db64dc342ad0fd302427640d, type: 3}
+  m_Name: Prisoner
+  m_EditorClassIdentifier: 
+  characterName: Prisoner
+  dialogue:
+    dialogueText:
+    - Hu hu HO!
+    - A new face!
+    - Such a refreshing sight...
+    response:
+    - repsonseText: Uh.. hey?
+      nextDialogue:
+        dialogueText:
+        - Say..
+        - Newcomer.. you've noticed it right?
+        response:
+        - repsonseText: Noticed what?
+          nextDialogue:
+            dialogueText:
+            - Don't things seem a bit, repetitive?
+            - As though even if I leave this prison
+            - I know I'll just be stuck right were I started no matter what...
+            - Like some sort of twisted fate...
+            response:
+            - repsonseText: ....okay
+              nextDialogue:
+                dialogueText:
+                - Oh ho newcomer, you'll see in due time... in due time...
+                response: []
+                loopingDialogue: []
+                itemToGive: {fileID: 0}
+                desiredItem: {fileID: 0}
+            loopingDialogue: []
+            itemToGive: {fileID: 0}
+            desiredItem: {fileID: 0}
+        loopingDialogue: []
+        itemToGive: {fileID: 0}
+        desiredItem: {fileID: 0}
+    loopingDialogue:
+    - Hu hu ho we meet again newcomer...
+    - ...
+    - Now leave me be...
+    itemToGive: {fileID: 0}
+    desiredItem: {fileID: 0}
+  itemDialogue:
+    dialogueText: []
+    response: []
+    loopingDialogue: []
+    itemToGive: {fileID: 0}
+    desiredItem: {fileID: 0}
+  desiredItem: {fileID: 0}

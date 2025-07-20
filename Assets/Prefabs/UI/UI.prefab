@@ -936,6 +936,7 @@ MonoBehaviour:
   fadeSpeed: 1.5
   UIAnimator: {fileID: 0}
   doneFadingOut: 0
+  interior: 1
 --- !u!95 &7595101180998127460
 Animator:
   serializedVersion: 7
@@ -1526,6 +1527,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5077790594295021975, guid: 43fd1c5ba52779b4bbf8b62aeaec5666, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 5623657207207635493, guid: 43fd1c5ba52779b4bbf8b62aeaec5666, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -1553,6 +1558,14 @@ PrefabInstance:
     - target: {fileID: 6839223861645901795, guid: 43fd1c5ba52779b4bbf8b62aeaec5666, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875397007575423428, guid: 43fd1c5ba52779b4bbf8b62aeaec5666, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 339.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875397007575423428, guid: 43fd1c5ba52779b4bbf8b62aeaec5666, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 88
       objectReference: {fileID: 0}
     - target: {fileID: 7005237814833225654, guid: 43fd1c5ba52779b4bbf8b62aeaec5666, type: 3}
       propertyPath: m_AnchorMax.y

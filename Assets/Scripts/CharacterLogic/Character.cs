@@ -21,6 +21,10 @@ public class Character : MonoBehaviour
         dM = GameObject.FindGameObjectWithTag("DM").GetComponent<DialogueManager>();
         animator = GetComponent<Animator>();
 
+        if (profile)
+        {
+            Debug.Log($"Current Profile: {profile}");
+        }
         if (uIManager)
         {
             Debug.Log("UIManager Detected!");
@@ -44,6 +48,7 @@ public class Character : MonoBehaviour
             dM.currentCharacterObj = this;
             if (!talking)
             {
+                dM.currentCharacter = profile;
                 dM.currentDialogue = profile.dialogue;
             }
             if (Input.GetKeyDown(KeyCode.E))

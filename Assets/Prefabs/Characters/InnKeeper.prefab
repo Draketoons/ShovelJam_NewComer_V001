@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4016cb457122fc4483496b2110e8601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: edeff2cf53f75a54baf11b6d6149e645, type: 2}
+  profile: {fileID: 11400000, guid: 19bfeaede983e254090d435ec12b94ba, type: 2}
   talkDistance: 2
   drawDebugShapes: 1
   talking: 0
@@ -94,7 +94,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: 130952308089027046, guid: 5f8547beb0e040c4d99ab90a544ded35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

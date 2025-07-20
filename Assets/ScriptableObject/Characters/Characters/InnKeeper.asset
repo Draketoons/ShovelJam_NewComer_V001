@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd80ce37db64dc342ad0fd302427640d, type: 3}
+  m_Name: InnKeeper
+  m_EditorClassIdentifier: 
+  characterName: Inn Keeper
+  dialogue:
+    dialogueText:
+    - Wowie! What a pleasent surprise!
+    - Hello there newomer!
+    - We don't get many new faces 'round these parts
+    response:
+    - repsonseText: Hello!
+      nextDialogue:
+        dialogueText:
+        - How about I reserve you a room!
+        - It'll be ready in a little while...
+        - In the meantime how about you roam around town and meet the fine folk here!
+        response:
+        - repsonseText: I guess so
+          nextDialogue:
+            dialogueText:
+            - That's the spirit!
+            response: []
+            loopingDialogue: []
+            itemToGive: {fileID: 0}
+            desiredItem: {fileID: 0}
+        - repsonseText: No
+          nextDialogue:
+            dialogueText:
+            - Oh, uh, alrighty then, you could just wait here I guess...
+            response: []
+            loopingDialogue: []
+            itemToGive: {fileID: 0}
+            desiredItem: {fileID: 0}
+        loopingDialogue: []
+        itemToGive: {fileID: 0}
+        desiredItem: {fileID: 0}
+    loopingDialogue:
+    - Oh! Hi there again!
+    - Your room still isn't ready...
+    - There's...uh..
+    - A LOT of dust!
+    itemToGive: {fileID: 0}
+    desiredItem: {fileID: 0}
+  itemDialogue:
+    dialogueText:
+    - What a pleasent surprise!
+    - Hello there newcomer!
+    - Rarley get new faces 'round these parts
+    response:
+    - repsonseText: Hello
+      nextDialogue:
+        dialogueText:
+        - I'll reserve a room for you
+        - While I'm doing that why don't you roam around town and meet some folk!
+        - Couldn't hurt right?
+        response:
+        - repsonseText: I guess so
+          nextDialogue:
+            dialogueText:
+            - That's the spirit!
+            response: []
+            loopingDialogue: []
+            itemToGive: {fileID: 0}
+            desiredItem: {fileID: 0}
+        - repsonseText: Nah...
+          nextDialogue:
+            dialogueText:
+            - Oh, uh, alrighty then. You could just wait here if you'd like.
+            response: []
+            loopingDialogue: []
+            itemToGive: {fileID: 0}
+            desiredItem: {fileID: 0}
+        loopingDialogue: []
+        itemToGive: {fileID: 0}
+        desiredItem: {fileID: 0}
+    loopingDialogue:
+    - Hey again!
+    - Your room's still not ready
+    - there's...
+    - a LOT of dust...
+    itemToGive: {fileID: 0}
+    desiredItem: {fileID: 0}
+  desiredItem: {fileID: 0}
