@@ -77,18 +77,19 @@ MonoBehaviour:
     desiredItem: {fileID: 0}
   itemDialogue:
     dialogueText:
-    - qdqwdqw
-    - WDqwdQWD
-    - DWQFEFwd
+    - Howdy again!
+    - Wait a darn second
+    - Is that my new hat!!
     response:
-    - repsonseText: efwef
+    - repsonseText: Yup
       nextDialogue:
-        dialogueText: []
+        dialogueText:
+        - I can't express my graditude more strongly than this stranger
         response: []
         loopingDialogue: []
-        itemToGive: {fileID: 0}
+        itemToGive: {fileID: 11400000, guid: cdc6ca30938592c428d6a0c77ed4ced9, type: 2}
         desiredItem: {fileID: 0}
     loopingDialogue: []
     itemToGive: {fileID: 0}
-    desiredItem: {fileID: 0}
-  desiredItem: {fileID: 0}
+    desiredItem: {fileID: 11400000, guid: 4b11e5fd7eedbc74b9c6cc9e04861b12, type: 2}
+  desiredItem: {fileID: 11400000, guid: 4b11e5fd7eedbc74b9c6cc9e04861b12, type: 2}

@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd80ce37db64dc342ad0fd302427640d, type: 3}
+  m_Name: Teen
+  m_EditorClassIdentifier: 
+  characterName: Teen
+  dialogue:
+    dialogueText:
+    - hmph.
+    response:
+    - repsonseText: '?'
+      nextDialogue:
+        dialogueText:
+        - HMPH.
+        response:
+        - repsonseText: ???
+          nextDialogue:
+            dialogueText:
+            - If your gonna keep buggin' me newcomer.. you shoudl at least be useful...
+            response:
+            - repsonseText: Brat.
+              nextDialogue:
+                dialogueText:
+                - Uh huh.
+                - Anyways...
+                - I need ya to go inside there and grab me a root beer
+                - ALSO I'M NOT KID
+                - I'm TECHNITCALLY a teenager
+                - Which is basically an adult, sooo
+                - Anyways, I'll give you the money for it, deal?
+                response:
+                - repsonseText: Fine.
+                  nextDialogue:
+                    dialogueText:
+                    - Alright now get to it.
+                    response: []
+                    loopingDialogue: []
+                    itemToGive: {fileID: 11400000, guid: 3ed6d1cd39b65d04bba1632120c20ec1, type: 2}
+                    desiredItem: {fileID: 0}
+                - repsonseText: No.
+                  nextDialogue:
+                    dialogueText:
+                    - Hmph, whatever
+                    response: []
+                    loopingDialogue: []
+                    itemToGive: {fileID: 0}
+                    desiredItem: {fileID: 0}
+                loopingDialogue: []
+                itemToGive: {fileID: 0}
+                desiredItem: {fileID: 0}
+            loopingDialogue: []
+            itemToGive: {fileID: 0}
+            desiredItem: {fileID: 0}
+        loopingDialogue: []
+        itemToGive: {fileID: 0}
+        desiredItem: {fileID: 0}
+    loopingDialogue:
+    - You got it?
+    - ...
+    - Why'd you even talk to me.
+    itemToGive: {fileID: 0}
+    desiredItem: {fileID: 0}
+  itemDialogue:
+    dialogueText:
+    - AHH SCORE
+    response:
+    - repsonseText: Uh, ur welcome
+      nextDialogue:
+        dialogueText:
+        - Oh, yea, thanks, I mean I probably could've gotten it myself but, still
+          thanks.
+        response:
+        - repsonseText: uh huh
+          nextDialogue:
+            dialogueText:
+            - ...
+            response: []
+            loopingDialogue: []
+            itemToGive: {fileID: 0}
+            desiredItem: {fileID: 0}
+        loopingDialogue: []
+        itemToGive: {fileID: 0}
+        desiredItem: {fileID: 0}
+    loopingDialogue: []
+    itemToGive: {fileID: 0}
+    desiredItem: {fileID: 11400000, guid: 67c6efa127dc0d947bff03a3ba6d9bf3, type: 2}
+  desiredItem: {fileID: 11400000, guid: 67c6efa127dc0d947bff03a3ba6d9bf3, type: 2}

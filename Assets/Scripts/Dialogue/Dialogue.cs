@@ -8,4 +8,5 @@ public class Dialogue
     public string[] loopingDialogue;
     public ItemProfile itemToGive;
     public ItemProfile desiredItem;
+    public bool isShutDownSignal;
 }

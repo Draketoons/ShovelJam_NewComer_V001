@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd80ce37db64dc342ad0fd302427640d, type: 3}
+  m_Name: Bartender
+  m_EditorClassIdentifier: 
+  characterName: Bartender
+  dialogue:
+    dialogueText:
+    - Huh, a new face...
+    - Fancy a drink? newcomer?
+    response:
+    - repsonseText: (Show's empty pocket holes)
+      nextDialogue:
+        dialogueText:
+        - Oh...
+        - Well that's unfortunate
+        - Dangnabit I'll never get a customer...
+        - Say... if you round up the money to buy a drink from me
+        - I'll tell ya a secret!
+        - It may also involve a favor...
+        response:
+        - repsonseText: Fine
+          nextDialogue:
+            dialogueText:
+            - WHOOPIE, Now just come back whe you have some money!
+            - 
+            response: []
+            loopingDialogue: []
+            itemToGive: {fileID: 0}
+            desiredItem: {fileID: 0}
+        loopingDialogue: []
+        itemToGive: {fileID: 0}
+        desiredItem: {fileID: 0}
+    loopingDialogue:
+    - Still nothin eh?
+    - Well, I'm a patient man, Just, please, please buy a drink from me...
+    itemToGive: {fileID: 0}
+    desiredItem: {fileID: 0}
+  itemDialogue:
+    dialogueText:
+    - Oh my golly!
+    - You actually have money!
+    - I can't believe it
+    - Now here's my secret!
+    - I have a humongus crush on the local shopkeeper
+    - But I'm too nervous to tell her in person...
+    - so if you could, deliver this letter...
+    - it would mean a lot to me
+    response:
+    - repsonseText: Alright
+      nextDialogue:
+        dialogueText:
+        - Thank you kindly stranger!
+        response: []
+        loopingDialogue: []
+        itemToGive: {fileID: 11400000, guid: 67c6efa127dc0d947bff03a3ba6d9bf3, type: 2}
+        desiredItem: {fileID: 0}
+    loopingDialogue: []
+    itemToGive: {fileID: 11400000, guid: 8b8c22859f872ec498d6a1e5c10bac9a, type: 2}
+    desiredItem: {fileID: 11400000, guid: 3ed6d1cd39b65d04bba1632120c20ec1, type: 2}
+  desiredItem: {fileID: 11400000, guid: 3ed6d1cd39b65d04bba1632120c20ec1, type: 2}

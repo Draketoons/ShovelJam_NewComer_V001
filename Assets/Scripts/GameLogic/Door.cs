@@ -12,12 +12,23 @@ public class Door : MonoBehaviour
     [SerializeField] private UIManager uIManager;
     [SerializeField] private bool interiorDoor;
     [SerializeField] private ItemProfile requiredItem;
+    [SerializeField] private Inventory inventory;
+    bool needItem;
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         gM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
         uIManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<UIManager>();
+        inventory = gM.GetComponent<Inventory>();
+    }
+
+    private void Start()
+    {
+        if (requiredItem)
+        {
+            needItem = true;
+        }
     }
 
     private void Update()
@@ -26,17 +37,35 @@ public class Door : MonoBehaviour
 
         if (player && playerDistance <= triggerDistance)
         {
-            if (Input.GetKeyDown(KeyCode.W) && !player.topDownControls)
+            if (!needItem)
             {
-                WalkThrough();
+                if (Input.GetKeyDown(KeyCode.W) && !player.topDownControls)
+                {
+                    WalkThrough();
+                }
+                if (player.topDownControls)
+                {
+                    WalkThrough();
+                }
+                if (uIManager.doneFadingOut)
+                {
+                    SceneManager.LoadScene(sceneToLoad);
+                }
             }
-            if (player.topDownControls)
+            if (needItem && inventory.FindItem(requiredItem))
             {
-                WalkThrough();
-            }
-            if (uIManager.doneFadingOut)
-            {
-                SceneManager.LoadScene(sceneToLoad);
+                if (Input.GetKeyDown(KeyCode.W) && !player.topDownControls)
+                {
+                    WalkThrough();
+                }
+                if (player.topDownControls)
+                {
+                    WalkThrough();
+                }
+                if (uIManager.doneFadingOut)
+                {
+                    SceneManager.LoadScene(sceneToLoad);
+                }
             }
         }
     }

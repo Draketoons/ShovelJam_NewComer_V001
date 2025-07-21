@@ -21,6 +21,7 @@ public class DialogueManager : MonoBehaviour
         inventory = GameObject.FindGameObjectWithTag("GM").GetComponent<Inventory>();
         dialogueIndex = -1;
         hasTalkedTo = false;
+        checkedItem = false;
     }
 
     private void Update()
@@ -31,8 +32,18 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public void CloseApp()
+    {
+        Debug.Log("Quitting...");
+        Application.Quit();
+    }
+
     public void AdvanceDialogue()
     {
+        if (currentDialogue.isShutDownSignal)
+        {
+            CloseApp();
+        }
         currentCharacterObj.PlayTalkAnim();
         if (inventory.FindItem(currentCharacter.desiredItem) && !checkedItem)
         {

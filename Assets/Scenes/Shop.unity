@@ -629,6 +629,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShopKeep
       objectReference: {fileID: 0}
+    - target: {fileID: 8472126928720744862, guid: 868646ea052672f44acadec9d6a4e8ee, type: 3}
+      propertyPath: profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 983cff4a1be15ec479f9feac2ddce0b3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

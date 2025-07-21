@@ -24,7 +24,8 @@ MonoBehaviour:
         dialogueText:
         - How about I reserve you a room!
         - It'll be ready in a little while...
-        - In the meantime how about you roam around town and meet the fine folk here!
+        - In the meantime, why not ry roaming around and meeting folks, I strongly
+          suggest going to the Sheriff's building first
         response:
         - repsonseText: I guess so
           nextDialogue:
@@ -63,6 +64,7 @@ MonoBehaviour:
         dialogueText:
         - I'll reserve a room for you
         - While I'm doing that why don't you roam around town and meet some folk!
+        - You should definitely go check out the sheriff's building
         - Couldn't hurt right?
         response:
         - repsonseText: I guess so

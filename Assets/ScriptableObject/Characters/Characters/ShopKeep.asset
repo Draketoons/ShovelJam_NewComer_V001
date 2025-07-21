@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd80ce37db64dc342ad0fd302427640d, type: 3}
+  m_Name: ShopKeep
+  m_EditorClassIdentifier: 
+  characterName: ShopKeep
+  dialogue:
+    dialogueText:
+    - Oh heya there sugar!
+    - Welcome to my shop!
+    - What can I get for such a cutie new face like yourself?
+    response:
+    - repsonseText: Hat?
+      nextDialogue:
+        dialogueText:
+        - Oh yes this is a mightfy fine hat!
+        - ...
+        - Well arentcha gonna pay?
+        response:
+        - repsonseText: uhh..
+          nextDialogue:
+            dialogueText:
+            - Oh you don't have any money on you doya?
+            - Oh you poor thing...
+            - Hmmm...
+            - How about we make a deal?
+            - I've been despratly lonely lately...
+            - If you could find me a date I could give you this premium hat for the
+              low low price offf!
+            - $0.00! FREE!!
+            - Whadoya say?
+            response:
+            - repsonseText: Alright I guess
+              nextDialogue:
+                dialogueText:
+                - OH you have just made my day sugar! now off with ya
+                response: []
+                loopingDialogue: []
+                itemToGive: {fileID: 0}
+                desiredItem: {fileID: 0}
+            loopingDialogue: []
+            itemToGive: {fileID: 0}
+            desiredItem: {fileID: 0}
+        loopingDialogue: []
+        itemToGive: {fileID: 0}
+        desiredItem: {fileID: 0}
+    loopingDialogue:
+    - Well hiya again sugar, any luck on that date?
+    - No?
+    - Well don't you give up hope!
+    - Cause I'm honestly so desprate it's kinda sad.
+    itemToGive: {fileID: 0}
+    desiredItem: {fileID: 0}
+  itemDialogue:
+    dialogueText:
+    - Hey sh- oh?
+    - You have a letter for me?
+    - Well lemme see!
+    response:
+    - repsonseText: Here you go!
+      nextDialogue:
+        dialogueText:
+        - GASP
+        - I can't believe it!
+        - It's a love letter!
+        - I knew my love life wasn't over!
+        - And it's fromm~
+        - Oh
+        - The bartender...
+        - ...
+        - Well, a deal's a deal
+        - Don't be a stranger hun!
+        response:
+        - repsonseText: Thanks!
+          nextDialogue:
+            dialogueText:
+            - Any Time!
+            response: []
+            loopingDialogue: []
+            itemToGive: {fileID: 11400000, guid: 4b11e5fd7eedbc74b9c6cc9e04861b12, type: 2}
+            desiredItem: {fileID: 0}
+        loopingDialogue: []
+        itemToGive: {fileID: 0}
+        desiredItem: {fileID: 11400000, guid: 8b8c22859f872ec498d6a1e5c10bac9a, type: 2}
+    loopingDialogue: []
+    itemToGive: {fileID: 0}
+    desiredItem: {fileID: 11400000, guid: 8b8c22859f872ec498d6a1e5c10bac9a, type: 2}
+  desiredItem: {fileID: 11400000, guid: 8b8c22859f872ec498d6a1e5c10bac9a, type: 2}
