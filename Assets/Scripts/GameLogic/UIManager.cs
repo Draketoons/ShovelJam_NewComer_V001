@@ -133,7 +133,7 @@ public class UIManager : MonoBehaviour
         dialogueBoxUI.SetActive(true);
         if (currentCamera.WorldToViewportPoint(dialogueManager.currentCharacterObj.transform.position).y > 0.5f)
         {
-            dialogueBoxUI.transform.position = new Vector3(dialogueBox.transform.position.x, -50.0f, dialogueBox.transform.position.z);
+            dialogueBoxUI.transform.position = new Vector3(dialogueBox.transform.position.x, -30.0f, dialogueBox.transform.position.z);
             Debug.Log("Current character is up");
         }
         if (currentCamera.WorldToViewportPoint(dialogueManager.currentCharacterObj.transform.position).y < 0.5f)

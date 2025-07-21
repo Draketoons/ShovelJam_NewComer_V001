@@ -351,7 +351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5817526147266242692, guid: 4c72a6e3d7f40484e802a1921e786657, type: 3}
       propertyPath: endDayLimit
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5817526147266242692, guid: 4c72a6e3d7f40484e802a1921e786657, type: 3}
       propertyPath: startingTime
@@ -403,6 +403,7 @@ MonoBehaviour:
   uIManager: {fileID: 0}
   interiorDoor: 0
   requiredItem: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!4 &206812114
 Transform:
   m_ObjectHideFlags: 0
@@ -455,6 +456,7 @@ MonoBehaviour:
   uIManager: {fileID: 0}
   interiorDoor: 0
   requiredItem: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!4 &216639851
 Transform:
   m_ObjectHideFlags: 0
@@ -1468,6 +1470,7 @@ MonoBehaviour:
   uIManager: {fileID: 0}
   interiorDoor: 0
   requiredItem: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!4 &1061203854
 Transform:
   m_ObjectHideFlags: 0
@@ -1520,6 +1523,7 @@ MonoBehaviour:
   uIManager: {fileID: 0}
   interiorDoor: 0
   requiredItem: {fileID: 11400000, guid: cdc6ca30938592c428d6a0c77ed4ced9, type: 2}
+  inventory: {fileID: 0}
 --- !u!4 &1079330851
 Transform:
   m_ObjectHideFlags: 0
@@ -2460,10 +2464,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbfc66696b9efa241adac4ef5fde7207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMusic: {fileID: 8300000, guid: b8bf481fa721e28449a7ade684da9c5b, type: 3}
+  currentMusic: {fileID: 8300000, guid: 3c46818d2656fcb4d9696c134b15adc6, type: 3}
   loopSound: {fileID: 8300000, guid: 793281986414c194f8c8f9f332fccd05, type: 3}
-  startSound: {fileID: 8300000, guid: 1df9772e054a9854b956e3a775f7ce1e, type: 3}
-  playStartSound: 0
+  startSound: {fileID: 8300000, guid: e867de66514b4964c96d983d253549bd, type: 3}
+  playStartSound: 1
 --- !u!1 &1868833432
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,6 +2505,7 @@ MonoBehaviour:
   uIManager: {fileID: 0}
   interiorDoor: 0
   requiredItem: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!4 &1868833434
 Transform:
   m_ObjectHideFlags: 0
@@ -2788,14 +2793,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3164841139162154805, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3164841139162154805, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4890820259392192476, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2824,21 +2821,9 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5998052181384669722, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5998052181384669722, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7433469145411213905, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: m_Name
       value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 7433469145411213905, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8106754092547738801, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: currentCamera
@@ -2870,10 +2855,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8354240196434847723, guid: 86d020c16d51da341be1414c649ec280, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8380110195480354658, guid: 86d020c16d51da341be1414c649ec280, type: 3}
-      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8935696279793115017, guid: 86d020c16d51da341be1414c649ec280, type: 3}
